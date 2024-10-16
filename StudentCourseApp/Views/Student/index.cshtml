@@ -1,0 +1,31 @@
+﻿
+@model IEnumerable<StudentCourseApp.Models.Student>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<h2>Student List</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Student Name</th>
+            <th>Course Name</th>
+            <th>Teacher Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.StudentName</td>
+                <td>@student.Course.CourseName</td>
+                <td>@student.Course.Teacher.TeacherName</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
